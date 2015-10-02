@@ -14,11 +14,9 @@
 
 
 .wrapper {
-
   background: #BADA55;
   color:#D12028;
   border:1px solid #fff;
-
 }
 
 html {
@@ -46,12 +44,20 @@ body {
   -webkit-transform: translate3d(0, 0, 0);
 }
 
+
+/*
+  Slide Widths
+*/
+
+w = 1920px
+h = 1080px
+
 .slides > article {
   display: block;
   position: absolute;
   overflow: hidden;
-  width: w = 1920px;
-  height: h = 1080px;
+  width w
+  height h
   margin-left: -(w / 2);
   margin-top: -(h / 2);
   
@@ -59,11 +65,8 @@ body {
   top: 50%;
   border-radius 5px;
   padding: 0;
-
   background-color: none;
-
-
-  transition: transform .3s ease-out;
+  transition: all 0.3s ease-out;
   justify-content center
   flex-direction column
   & > * {
@@ -87,24 +90,19 @@ body {
   left: 0;
   top: 0;
   width: 150px;
-  height: 700px;  
-
-  left: 50%;
-  top: 50%;
-
+  height: 100%;
+  left: 0;
+  top: 0;
   cursor: pointer;  
-  margin-top: -350px;  
-  
   tap-highlight-color: transparent;
-  -o-tap-highlight-color: transparent;
-  -moz-tap-highlight-color: transparent;
-  -webkit-tap-highlight-color: transparent;
+  
 }
 #prev-slide-area {
-  margin-left: -550px;
+  
 }
 #next-slide-area {
-  margin-left: 400px;
+  right 0
+  left auto
 }
 .slides.layout-widescreen #prev-slide-area,
 .slides.layout-faux-widescreen #prev-slide-area {
@@ -124,71 +122,34 @@ body {
 .slides > article.far-past {
   display: block;
   transform: translate(-4000px);
+  display none;
 }
 .slides > article.past {
-  display: block;
-  transform: translate(-1920px);
+  display: flex;
+  transform: scale(0.5) translate(-(w + (0))px);
   opacity: 0.3;
+    
 }
 .slides > article.current {
   display: flex;
   transform: translate(0);
+  z-index 10
 }
 .slides > article.next {
   display: flex;
-  transform: translate(1920px);
+  transform: scale(0.5) translate((w + (0))px);
   opacity: 0.3;
 }
 .slides > article.far-next {
   display: flex;
   transform: translate(4000px);
+  display none;
 }
 
-.slides.layout-widescreen > article.far-past,
-.slides.layout-faux-widescreen > article.far-past {
-  display: block;
-  transform: translate(-2260px);
-  -o-transform: translate(-2260px);
-  -moz-transform: translate(-2260px);
-  -webkit-transform: translate3d(-2260px, 0, 0);
-}
-.slides.layout-widescreen > article.past,
-.slides.layout-faux-widescreen > article.past {
-  display: block;
-  transform: translate(-1130px);
-  -o-transform: translate(-1130px);
-  -moz-transform: translate(-1130px);
-  -webkit-transform: translate3d(-1130px, 0, 0);
-}
-.slides.layout-widescreen > article.current,
-.slides.layout-faux-widescreen > article.current {
-  display: block;
-  transform: translate(0);
-  -o-transform: translate(0);
-  -moz-transform: translate(0);
-  -webkit-transform: translate3d(0, 0, 0);
-}
-.slides.layout-widescreen > article.next,
-.slides.layout-faux-widescreen > article.next {
-  display: block;
-  transform: translate(1130px);
-  -o-transform: translate(1130px);
-  -moz-transform: translate(1130px);
-  -webkit-transform: translate3d(1130px, 0, 0);
-}
-.slides.layout-widescreen > article.far-next,
-.slides.layout-faux-widescreen > article.far-next {
-  display: block;
-  transform: translate(2260px);
-  -o-transform: translate(2260px);
-  -moz-transform: translate(2260px);
-  -webkit-transform: translate3d(2260px, 0, 0);
-}
 
 /* Styles for slides */
 
 .slides > article {
-  
   color: #6C818F;
   font-size: 30px;
   letter-spacing: -1px;
@@ -565,5 +526,7 @@ article.smaller q::after {
 .prettyprint .var { /* a declaration; a variable name */
   color: rgb(127, 0, 127);
 }  
+
+
 
 

@@ -16,10 +16,14 @@ html
           a(href='http://twitter.com/wesbos') @wesbos
         
         article
-          h1 I&apos;m Wes Bos
+          h1(style="font-size:250px;") I&apos;m<br>Wes Bos
           br
-          h2 These slides will be available shortly after this talk <br>I&apos;ll tweet the link out.
-          img(src='images/Twitter_logo_white.png', width='300', alt='')
+          img(src="http://emojipedia-us.s3.amazonaws.com/cache/b3/af/b3af9727e2f9ce5affb68f6bf450b081.png")
+        
+        article
+          h2(style="font-size:60px;") These slides will be available shortly after this talk <br>I&apos;ll tweet the link out.
+          img(src='images/Twitter_logo_white.png', width='300' style="margin:100px auto")
+          
           h2
             a(href='http://twitter.com/wesbos', target='_blank') @wesbos  
         
@@ -28,16 +32,24 @@ html
             img(src='images/cover.png')
           a(href='https://SublimeTextBook.com/?utm_source=sttalk&utm_medium=link&utm_campaign=talkpromo') SublimeTextBook.com
 
+        article.plain
+          img(src="http://wes.io/dQHL/content")
+          a(href="http://commandlinepoweruser.com") ComandLinePowerUser.com
+
+        article.plain
+          img.high(src="http://wes.io/dQAr/content")
+          a(href="http://flexbox.io") flexbox.io
+
         article
           h1 Let's talk about tooling.
-          p First, a story (verhaal).
+          p First, a story
         
         article
           h1 It's about <br>the plumbing industry
 
-        article
+        article.old-tools
           h1 Traditional Tools
-          ul.build
+          ul.build.flex
             li
               span Copper Soldering
                 br
@@ -61,9 +73,10 @@ html
         
         article
           h1 Enter Shark Bite
+          img(src="https://knoji.com/images/user/sharkbite-depth1.jpg")
 
         article
-          h2 SharkBite is a new type of fitting that plumbers can use to attach pipes together
+          h2(style="font-size:160px; margin-top:50px;") SharkBite is a new type of fitting that plumbers can use to attach pipes together
           p It's Lego for plumbing!
           ul.build
             li Snaps together instantly
@@ -72,7 +85,7 @@ html
             li Much less prone to leaks
 
         article
-          h2 Shark Bite is more expensive, <br>- but -<br>  it allows for faster work <br>and is much less error prone.
+          h2(style="font-size:160px;") Shark Bite is more expensive, <br>- but -<br>  it allows for faster work <br>and is much less error prone.
 
         article
           h2 Many Plumbers have written it off. <br>It's too expensive.<br>It's too fancy.<br>
@@ -86,7 +99,7 @@ html
           p Some developers write tooling off as over-engineering, while others have realized the benefits.
 
         article
-          h1 There is a fine line between <br>tooling for tooling's sake <br>and getting real work done.
+          h1(style="font-size:160px;") There is a fine line between <br>tooling for tooling's sake <br>and getting real work done.
 
         article
           img(src="images/brain.svg")
@@ -94,13 +107,17 @@ html
           p Any time invested in tooling should be paid back by greater efficiency and better, more resilient code.
 
         article
-          h2(style="font-size:170px;") 😭
+          
+          p "There are too many tools!"
+          p "What Should I use?"
+          p "It changes too fast!"
+          h2(style="font-size:116px;") 😭
           h2 I'm overwhelmed.
-          p (loudly crying)
+          em(style="color:white;") [loudly crying]
 
         article
-          h2 😭 → 😢 → 😑 → 😮 → 😁 → 😄
-          h3 This talk is going to review popular workflow components. <br>I hope you can take a few things away to improve your workflow.
+          h2(style="font-size:116px;") 😭 → 😢 → 😑 → 😮 → 😁 → 😄
+          h3 This talk is going to review popular workflow components. <br>I hope you can take away 3 or 4 things <br>to improve your own workflow.
 
         article
           h2 Build Tools
@@ -121,13 +138,13 @@ html
         article
           .halves
             .half
-              img(src="images/grunt-logo.png" height=200)
+              img(src="images/grunt-logo.png" height=200, style="background:white; padding:20px; border-radius:50%;")
               h2 Grunt
               p One task at a time
               p Gruntfile is Configured
               p Write to file system
             .half
-              img(src="images/gulp-logo.png" height=200)
+              img(src="images/gulp-logo.png" height=200, style="background:white; padding:20px 70px; border-radius:50%;")
               h2 Gulp
               p Sequential Tasks
               p Gulpfile is Coded
@@ -171,25 +188,25 @@ html
           h1(style="font-size:250px;") Performance!
         
         article.critical
-          h1
+          h1.big
             | Critical
             a(href="https://github.com/addyosmani/critical" target=_blank) ●
           p First Paint is extremely important
           p Extracts & inlines critical-path (above-the-fold) CSS from HTML
         article
-          img(src="http://wes.io/dN1J/content")
+          img.high(src="http://wes.io/dN1J/content")
         article.purify
-          h1
+          h1.big
             | Purify
             a(href="https://github.com/purifycss/purifycss", target=_blank) ●
           p Removes Unused CSS. 
           p Works with JavaSCript Genereated classes & Selectors 
         
         article
-          img(src="http://wes.io/dNSv/content")
+          img.high(src="http://wes.io/dNSv/content")
 
         article.imagemin
-          h1
+          h1.big
             | ImageMin
             a(href="https://github.com/imagemin/imagemin", target=_blank) ●
 
@@ -200,10 +217,10 @@ html
           p ImageMin provides a common, easy to use interface for 17 different image compression libraries. 
 
         article
-          img(src="http://wes.io/dMz0/content")
+          img.high(src="http://wes.io/dMz0/content")
 
         article
-          h1 Do you have 7.75 seconds?
+          h1.big Do you have<br>7.75 seconds?
 
         article
           h2 60.5%!
@@ -228,12 +245,12 @@ html
           h1(style="font-size:200px;") Dependency + Module Management
 
         article
-          h1 We're seeing a huge shift in how we manage front end dependencies
+          h1(style="font-size:180px;") We're seeing a huge shift<br>in how we manage<br>front end dependencies
 
         article
           h2 The Old Way:
           ul
-            li Find monolith library we want
+            li Find monolith library we want 
             li Download from Github
             li Unzip
             li Move over files to project
@@ -251,12 +268,12 @@ html
           h2 Or 3 of your plugins are all using Lodash
 
         article
-          h1 The Future is Modules
+          h2 The Future is Modules
           p We have have modules in Node.js since the beginning, but have seen limited uptake in the browser.
           p With the rise in popularity of build tools, now is the time to start!
 
         article
-          h1 How? 
+          h1.huge How? 
 
         article
           h2 1. Install your libraries:
@@ -287,14 +304,14 @@ html
           small You can spend hours comparing these three. Pick Browserify for a quickest setup. 
 
         article
-          h1 STOP! <br>What about Gulp? Grunt?<br> Where do they fit in?
+          h1.large STOP! <br>What about Gulp? Grunt?<br> Where do they fit in?
 
         article
           h2 Gulp and Grunt are task runners, one of your tasks will be to bundle your JavaScript.
           p Gulp and Grunt can call WebPack, Browserify and JSPM for you, or you can call them directly. 
 
         article
-          h1 Back to Modules<br> Let's look at some code
+          h1.large Back to Modules<br> Let's look at some code
 
         article
           img.high(src="http://wes.io/dMoy/content")
@@ -336,14 +353,14 @@ html
           p Will categorize into ‘Browserify’, ‘Windows’, ‘Grunt’, ‘Gulp’, ‘Tessel’ + more
 
         article
-          h1(style="font-size:300px; color:pink;") The Future
+          h1.huge The Future
           p JavaScript + CSS are evolving a rapid pace. Let's start writing future code today. 
 
         article
-          h1 Future JavaScript
+          h1.big Future JavaScript
 
         article
-          h1 ES6<br>ES7<br>ES-Next
+          h1.big ES6<br>ES7<br>ES-Next
           p We have all kinds of useful new features
 
         article
@@ -401,7 +418,7 @@ html
         
         article
           img(src="images/jslogo.jpg")
-          h2 It's Written in JavaScript and compile times are lightning fast
+          h2(style="font-size:150px;") It's Written in JavaScript and compile times are lightning fast
 
         article
           img(src="images/postcss-logo.png" style="border-radius:50%; border:10px solid white;")
@@ -457,7 +474,20 @@ html
         //- Sum it all up!
         article
           h1 Whew. That was a lot.
-          h1 Sum it up somehow...
-          p vroeg naar bed
         
+        article
+          h1.big Tooling is important
+        
+        article
+          h1.big Put a<br>build process<br>in place
+
+        article
+          h1.big Sky is the limit!
+
+        article
+          h1.big Questions?
+          a(href="http://twitter.com/wesbos") @wesbos
+          a(href="http://wesbos.com") WesBos.com
+        
+
 

@@ -20,7 +20,6 @@ html {
     position absolute
     filter grayscale(100%) contrast(160%)
     background:url(images/3.jpg); // blacksmith
-    // background:url(images/tools-on-bench.jpg);
     background-size cover
     top 0
     left 0
@@ -46,6 +45,13 @@ html {
     background-image: linear-gradient(-132deg, #FFDD00 0%, #6DD7BA 100%);
 
 
+.slides > article.old-tools
+  &:before
+    background-image url("images/soldering.jpg") !important
+    background-size contain
+  &:after
+    opacity 0.1
+
 // Mixin
 random(min,max)
   return floor(math(0, 'random')*(max - min + 1) + min)
@@ -53,17 +59,17 @@ random(min,max)
 randomColor()
   return rgb(random(0,255),random(0,255),random(0,255))
 
-combos = (#825854 #3de7e4) (#29519e #94eced) (#e26ab5 #1e4823) (#11feec #0ae09f) (#e0ec33 #7bc6dd) (#3a5c8e #eb821b) (#ca5723 #7d5794) (#6aa4e1 #ae5ceb) (#226443 #5e9ccd) (#6d6528 #3768f7) (#2decf5 #52aeea) (#d07dd7 #e1e34a) (#3456fd #14e839) (#f8078c #17156b)
+combos = (#825854 #3de7e4) (#29519e #94eced) (#e26ab5 #1e4823) (#11feec #FF00E0) (#006C8D #006C8D) (#3a5c8e #eb821b) (#ca5723 #7d5794) (#6aa4e1 #ae5ceb) (#226443 #5e9ccd) (#6d6528 #3768f7) (#2decf5 #52aeea) (#d07dd7 #e1e34a) (#3456fd #14e839) (#f8078c #17156b)
 
 randomGradient()
-  n = random(1,14)
+  n = random(1,13)
   combo = combos[n]
   return combo
   
 for num in 1...40
   path = "images/"+ random(1,9)+".jpg"
   combo = randomGradient();
-  .slides > article:nth-child(40n+{num})
+  .slides > article:nth-child(39n+{num})
     &:before
       background-image url(path) 
       content combo[1]
@@ -110,6 +116,15 @@ h2
   line-height 1
   margin 0
 
+.large
+  font-size 200px
+
+.big
+  font-size 250px
+
+.huge
+  font-size 450px
+
 h3
   font-size 70px
   color yellow
@@ -146,3 +161,9 @@ article.treats
     color orange
     
     
+.flex 
+  display flex !important
+  & > *
+    flex 1
+    &:before
+      content  ''
