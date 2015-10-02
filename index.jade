@@ -1,0 +1,463 @@
+doctype html
+html
+  head
+      title Modern Workflow &amp; Tooling
+      meta(charset='utf-8')
+      script(src='slides.js')
+      link(href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,700' rel='stylesheet' type='text/css')
+      link(href='styles.css'  rel='stylesheet' type='text/css')
+    body
+      section.slides.layout-regular.template-default
+        article.first
+          h1(style="font-size:180px;") Modern<br>Workflow<br>&amp; Tooling
+          p 🔥 Tasty Tooling Tips 
+          br
+          a(href='http://wesbos.com') wesbos.com
+          a(href='http://twitter.com/wesbos') @wesbos
+        
+        article
+          h1 I&apos;m Wes Bos
+          br
+          h2 These slides will be available shortly after this talk <br>I&apos;ll tweet the link out.
+          img(src='images/Twitter_logo_white.png', width='300', alt='')
+          h2
+            a(href='http://twitter.com/wesbos', target='_blank') @wesbos  
+        
+        article(style='background:white;')
+          a(href='https://SublimeTextBook.com/?utm_source=sttalk&utm_medium=link&utm_campaign=talkpromo')
+            img(src='images/cover.png')
+          a(href='https://SublimeTextBook.com/?utm_source=sttalk&utm_medium=link&utm_campaign=talkpromo') SublimeTextBook.com
+
+        article
+          h1 Let's talk about tooling.
+          p First, a story (verhaal).
+        
+        article
+          h1 It's about <br>the plumbing industry
+
+        article
+          h1 Traditional Tools
+          ul.build
+            li
+              span Copper Soldering
+                br
+              small Uses Blow Torch / Starts Fires
+                br 
+              small Prone to crack at joints
+                br 
+              small High level of experience needed
+            li
+              span Messy Glues
+                br
+              small Time Senstive
+                br
+              small Undoable
+            li
+              | Compression Fittings
+              br
+              small Prone to Leaking
+              br
+              small Difficult to Install
+        
+        article
+          h1 Enter Shark Bite
+
+        article
+          h2 SharkBite is a new type of fitting that plumbers can use to attach pipes together
+          p It's Lego for plumbing!
+          ul.build
+            li Snaps together instantly
+            li Can connect any material to copper
+            li Can be redone any time
+            li Much less prone to leaks
+
+        article
+          h2 Shark Bite is more expensive, <br>- but -<br>  it allows for faster work <br>and is much less error prone.
+
+        article
+          h2 Many Plumbers have written it off. <br>It's too expensive.<br>It's too fancy.<br>
+
+        article
+          h1 It's changing the industry<br><br> many are blind to the benefits.
+
+        article
+          h2 Web tooling is evolving in exactly the same way.
+          //- TODO: Put logos of JSPM, WebPack, Gulp, Grunt, JSCS 
+          p Some developers write tooling off as over-engineering, while others have realized the benefits.
+
+        article
+          h1 There is a fine line between <br>tooling for tooling's sake <br>and getting real work done.
+
+        article
+          img(src="images/brain.svg")
+          h2 Let's be smart about the tools we use.
+          p Any time invested in tooling should be paid back by greater efficiency and better, more resilient code.
+
+        article
+          h2(style="font-size:170px;") 😭
+          h2 I'm overwhelmed.
+          p (loudly crying)
+
+        article
+          h2 😭 → 😢 → 😑 → 😮 → 😁 → 😄
+          h3 This talk is going to review popular workflow components. <br>I hope you can take a few things away to improve your workflow.
+
+        article
+          h2 Build Tools
+          p The Biggest Barrier to Entry
+          //- TODO: Logos for build systems here 
+          p Grunt, Gulp, Broccoli, NPM, WebPack
+          p Not all tools are Equal
+        
+        article
+          h2 What are they for?
+          ul.build
+            li Compiling + Converting Styles
+            li Concatination
+            li Test Running
+            li Deployment
+            li + any task you want automate
+
+        article
+          .halves
+            .half
+              img(src="images/grunt-logo.png" height=200)
+              h2 Grunt
+              p One task at a time
+              p Gruntfile is Configured
+              p Write to file system
+            .half
+              img(src="images/gulp-logo.png" height=200)
+              h2 Gulp
+              p Sequential Tasks
+              p Gulpfile is Coded
+              p pipes contents through streams
+
+        article
+          h2 NPM as a build system
+          p Uses NPM Scripts in your package.json to run a string of bash tasks
+          p Instead of using Grunt Uglify or Gulp Autoprefixer, it uses the exposed CLI commands directly.
+
+        article
+          h2 "So Simple + Easy" 😳
+          img(src="http://wes.io/dMo2/content", alt="Taken from http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/")
+
+        article
+          img(src="http://wes.io/dMo1/content", width="200")
+          h2 WebPack
+          ul.build
+            li More focused on JavaScript Modules - Gulp meets Browserify
+            li Comes Batteries Included for many Common Tasks 
+            li Powerful, but hard to learn API
+            li Popular in React community - React Hot Loader
+
+
+        article
+          h1 What Should I use?
+
+        article
+          h2 Pick one. Whatever is best for you. 
+          p I think <strong>Gulp</strong> is the best fit because:
+            <br> Build Speed
+            <br> Package Availablility
+            <br> Ease of Authoring and Understanding
+            <br> Overall Industry Acceptanace<br><a href="http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results">47% use Gulp while near 20% don't use one at all</a> 
+
+        article
+          h2 Having a build tool is most important.
+          p Once you have something in place, we have thousands of packages available to us — let's look at some!
+
+        article.performance
+          h1(style="font-size:250px;") Performance!
+        
+        article.critical
+          h1
+            | Critical
+            a(href="https://github.com/addyosmani/critical" target=_blank) ●
+          p First Paint is extremely important
+          p Extracts & inlines critical-path (above-the-fold) CSS from HTML
+        article
+          img(src="http://wes.io/dN1J/content")
+        article.purify
+          h1
+            | Purify
+            a(href="https://github.com/purifycss/purifycss", target=_blank) ●
+          p Removes Unused CSS. 
+          p Works with JavaSCript Genereated classes & Selectors 
+        
+        article
+          img(src="http://wes.io/dNSv/content")
+
+        article.imagemin
+          h1
+            | ImageMin
+            a(href="https://github.com/imagemin/imagemin", target=_blank) ●
+
+        article
+          h2(style="font-size:150px;") Image Compression is Hard. 
+          br
+          p Most devs don't care enough to do it. 
+          p ImageMin provides a common, easy to use interface for 17 different image compression libraries. 
+
+        article
+          img(src="http://wes.io/dMz0/content")
+
+        article
+          h1 Do you have 7.75 seconds?
+
+        article
+          h2 60.5%!
+          img(src="http://wes.io/dNNq/content")
+        
+        article.uglifyjs
+          h1
+            | UglifyJS
+            a(href="https://github.com/mishoo/UglifyJS2", target=_blank) ●
+          p Minifies, Compresses and Mangles Code
+
+        article
+          h2 2.3m → 405k with just the defaults
+          img(src="http://wes.io/dN8j/content")
+
+        article
+          img.wide(src="http://wes.io/dMmY/content")
+
+        //- MODULES
+        
+        article
+          h1(style="font-size:200px;") Dependency + Module Management
+
+        article
+          h1 We're seeing a huge shift in how we manage front end dependencies
+
+        article
+          h2 The Old Way:
+          ul
+            li Find monolith library we want
+            li Download from Github
+            li Unzip
+            li Move over files to project
+            li pop in another &lt;script&gt; tag
+            li Rinse + Repeat
+
+        article
+          h2 One day you wake up and...
+          img.wide(src="http://wes.io/dMlN/content")
+        
+        article
+          h2 Or you have 5 versions of jQuery 😂
+
+        article
+          h2 Or 3 of your plugins are all using Lodash
+
+        article
+          h1 The Future is Modules
+          p We have have modules in Node.js since the beginning, but have seen limited uptake in the browser.
+          p With the rise in popularity of build tools, now is the time to start!
+
+        article
+          h1 How? 
+
+        article
+          h2 1. Install your libraries:
+          p
+            span.hl $
+            |  npm install jquery
+          p — or —
+          p
+            span.hl $
+            |  bower install jquery
+          p — or —
+          p
+            span.hl $
+            |  jspm install jquery
+
+        article
+          h2 2. Write your code
+          h3 Common JS → Node Style
+          p var $ = require('jquery');
+          h3 ES6 Modules
+          p import $ from 'jquery'
+
+        article
+          h2 3. Compile into a single or multiple bundles
+          p <span class="hl">Browserify</span> → Simpliest API
+          p <span class="hl">WebPack</span> → Handles CSS, built in Watching
+          p <span class="hl">JSPM</span> → Client Side. Closest to JavaScript Spec.
+          small You can spend hours comparing these three. Pick Browserify for a quickest setup. 
+
+        article
+          h1 STOP! <br>What about Gulp? Grunt?<br> Where do they fit in?
+
+        article
+          h2 Gulp and Grunt are task runners, one of your tasks will be to bundle your JavaScript.
+          p Gulp and Grunt can call WebPack, Browserify and JSPM for you, or you can call them directly. 
+
+        article
+          h1 Back to Modules<br> Let's look at some code
+
+        article
+          img.high(src="http://wes.io/dMoy/content")
+
+        article
+          h1 Small Modules that<br>do one thing <br>and<br> one thing well. 
+
+        article
+          h2 Only need Ajax?
+          p
+            span.hl $
+            | npm install fetch
+          p — Then —
+          img(src="http://wes.io/dNP7/content")
+
+        article
+          h2 Pick + Choose from Lodash
+          <img src="https://pbs.twimg.com/media/CMIobcrWgAA9WfA.png:large" width=900>
+
+
+        article
+          h1(style="font-size:200px;") NPM,<br> Bower,<br> or JSPM? 
+
+        article
+          h2 Registries
+          p When it comes to installing dependencies, there are two registries: NPM and Bower. JSPM uses NPM's registry.
+          p The main difference is that NPM supports nested dependencies while bower has a flat tree. 
+        
+        article
+          h1(style="font-size:250px;") Use NPM for everything!
+          br
+          p Even though NPM was initially for Node, it's been expanded to be the Package Manager for everything JavaScript + Front End.
+
+        article
+          h1
+            span.green Ecosystems:<br>
+            span Coming soon to an <br> npm install near you
+          br
+          p Will categorize into ‘Browserify’, ‘Windows’, ‘Grunt’, ‘Gulp’, ‘Tessel’ + more
+
+        article
+          h1(style="font-size:300px; color:pink;") The Future
+          p JavaScript + CSS are evolving a rapid pace. Let's start writing future code today. 
+
+        article
+          h1 Future JavaScript
+
+        article
+          h1 ES6<br>ES7<br>ES-Next
+          p We have all kinds of useful new features
+
+        article
+          h2 Arrow Functions
+          img(src="http://wes.io/dO1M/content")
+
+        article
+          h2 let and const variable declarations
+          img(src="http://wes.io/dO29/content")
+
+        article
+          h2 Template Strings
+          img.wide(src="http://wes.io/dNgg/content")
+        
+        article
+          h2 + Many More
+          p These are things we want to use today - and we can!
+
+        article(style="background:#f5da55;").plain
+          img(src="images/babel.svg")
+
+        article
+          img.high(src="http://wes.io/dNZX/content")
+
+        article
+          h4 Gulp → <code>gulp-babel</code>
+          h4 Grunt → <code>grunt-babel</code>
+          h4 Browserify → <code>babelify transformer</code>
+          h4 WebPack → <code>babel-loader</code>
+          h4 CLI → <code>babel script.js --out-file script-compiled.js</code>
+
+        article
+          h2 What about new Langauge Features?
+          p Not everything new is just Syntax <br>We have new methods, loops + more features.
+          p For that we use a polyfill - <code>require('babel/polyfill');</code>
+
+
+        //- Future CSS
+        article
+          h1(style="font-size:500px") <span class="white">CSS</span>4
+
+        article
+          h1 Everyone is <br>😍😍😍<br>over Sass<br>Less & Stylus
+
+        article
+          h1 But CSS is changing<br> We're getting the things we like in regular CSS:
+          p Variables, Nesting, Scoping...
+
+        article.plain(style="background:white;")
+          img(src="images/css-next-logo.svg")
+
+        article
+          h2 Write in CSS4,<br>compile for current browser support
+          p Start using the new features today
+        
+        article
+          img(src="images/jslogo.jpg")
+          h2 It's Written in JavaScript and compile times are lightning fast
+
+        article
+          img(src="images/postcss-logo.png" style="border-radius:50%; border:10px solid white;")
+          h2 It's part of PostCSS ecosystem
+          p Write your own CSS transformers or grab one of the dozens from NPM (like Autoprefixer!)
+
+        article
+          img(src="http://wes.io/dNVi/content")
+
+        //- Othe Treats
+        article.treats
+          h1 Workflow Treats
+          p Small things you should add to your workflow!
+        article
+          video(src="images/BrowserSync.mp4" loop autoplay)
+
+        article
+          h2 BrowserSync
+          ul.build
+            li Instant Reloading after changes are made
+            li Includes Server with cert for easy local HTTPS
+            li Proxies existing applications / servers - WordPress, Ruby, Python...
+            li Exposes server via local IP so you can test on multiple devices
+            li Syncs clicks, submits and scrolls
+            li Absolute MAGIC!
+
+        article
+          h2 Sourcemaps
+          p It's not uncommon for our code to go though several transforms before it hits the browser as regular CSS
+          p <code>Stylus</code> → <code>AutoPrefixer</code> → <code>CSS</code> 
+          p <code>ES6</code> → <code>Babel</code> → <code>Browserify</code> → <code>UglifyJS</code> → <code>JavaScript</code>
+
+        article
+          h2 What happens when there is an error?
+          p How do we trace it back to the original file?
+        
+        article
+          p CSS bug in <code>_typography.scss:10</code> but browser shows error in compiled and minified <code>app.css</code>
+          p JavaScript error in your React JSX component <code>Store.js:25</code>, but is untraceable after running through Babel and Browserify!
+
+        article
+          h1(style="font-size:240px;") Sourcemaps are<br>Treasuremaps<br>for bugs
+
+        article 
+          img.high(src="http://wes.io/dNdk/content")
+
+        article 
+          img.high(src="http://wes.io/dO8a/content")
+
+        article
+          img.wide(src="http://wes.io/dO6T/content")
+
+        //- Sum it all up!
+        article
+          h1 Whew. That was a lot.
+          h1 Sum it up somehow...
+          p vroeg naar bed
+        
+

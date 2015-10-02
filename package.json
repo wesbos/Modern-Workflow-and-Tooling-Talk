@@ -1,0 +1,22 @@
+{
+  "name": "modern-workflow-and-tooling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "slides.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.9.6",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-jade": "^1.1.0",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-stylus": "^2.0.7"
+  }
+}
