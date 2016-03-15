@@ -12,7 +12,7 @@ Small screen users should zoom out - these slides are 1080p.
 
 ## The Code + Content
 
-These slides are build with Flexbox, Gulp, Jade, Stylus and Browsersync all on top of the Google slide deck JS.
+These slides are built with Flexbox, Gulp, Jade, Stylus and Browsersync all on top of the Google slide deck JS.
 
 The code Licensed MIT - you can use this to make your own slide deck.
 
