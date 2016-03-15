@@ -6,31 +6,36 @@ html
       script(src='slides.js')
       link(href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,700' rel='stylesheet' type='text/css')
       link(href='styles.css'  rel='stylesheet' type='text/css')
-    body
+    body.square
       section.slides.layout-regular.template-default
         article.first
-          h1(style="font-size:180px;") Modern<br>Workflow<br>&amp; Tooling
-          p 🔥 Tasty Tooling Tips 
+          h1(style="font-size:150px;") Modern<br>Workflow<br>&amp; Tooling
+          p 🔥 Tasty Tooling Tips
           br
           a(href='http://wesbos.com') wesbos.com
           a(href='http://twitter.com/wesbos') @wesbos
-        
+
         article
-          h1(style="font-size:250px;") I&apos;m<br>Wes Bos
+          h1(style="font-size:170px;") I&apos;m<br>Wes Bos
           br
           img(src="images/canada-flag.png")
-        
+
         article
           h2(style="font-size:60px;") These slides will be available shortly after this talk <br>I&apos;ll tweet the link out.
           img(src='images/Twitter_logo_white.png', width='300' style="margin:100px auto")
-          
+
           h2
-            a(href='http://twitter.com/wesbos', target='_blank') @wesbos  
-        
+            a(href='http://twitter.com/wesbos', target='_blank') @wesbos
+
         article(style='background:white;')
-          a(href='https://SublimeTextBook.com/?utm_source=sttalk&utm_medium=link&utm_campaign=talkpromo')
+          a(href='https://ReactForBeginners.com.com/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo')
+            img(src='https://reactforbeginners.com/images/facebook-share.png')
+          a(href='https://ReactForBeginners.com/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo') ReactForBeginners.com
+
+        article(style='background:white;')
+          a(href='https://SublimeTextBook.com/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo')
             img(src='images/cover.png')
-          a(href='https://SublimeTextBook.com/?utm_source=sttalk&utm_medium=link&utm_campaign=talkpromo') SublimeTextBook.com
+          a(href='https://SublimeTextBook.com/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo') SublimeTextBook.com
 
         article.plain
           img(src="images/commandline.png")
@@ -43,7 +48,7 @@ html
         article
           h1 Let's talk about tooling.
           p First, a story
-        
+
         article
           h1 It's about <br>the plumbing industry
 
@@ -54,9 +59,9 @@ html
               span Copper Soldering
                 br
               small Uses Blow Torch / Starts Fires
-                br 
+                br
               small Prone to crack at joints
-                br 
+                br
               small High level of experience needed
             li
               span Messy Glues
@@ -70,13 +75,13 @@ html
               small Prone to Leaking
               br
               small Difficult to Install
-        
+
         article
           h1 Enter Shark Bite
           img(src="images/sharkbite-depth.jpg")
 
         article
-          h2(style="font-size:160px; margin-top:50px;") SharkBite is a new type of fitting that plumbers can use to attach pipes together
+          h2(style="font-size:90px; margin-top:50px;") SharkBite is a new type of fitting that plumbers can use to attach pipes together
           p It's Lego for plumbing!
           ul.build
             li Snaps together instantly
@@ -85,7 +90,7 @@ html
             li Much less prone to leaks
 
         article
-          h2(style="font-size:160px;") Shark Bite is more expensive, <br>- but -<br>  it allows for faster work <br>and is much less error prone.
+          h2(style="font-size:100px;") Shark Bite is more expensive, <br>- but -<br>  it allows for faster work <br>and is much less error prone.
 
         article
           h2 Many Plumbers have written it off. <br>It's too expensive.<br>It's too fancy.<br>
@@ -95,11 +100,10 @@ html
 
         article
           h2 Web tooling is evolving in exactly the same way.
-          //- TODO: Put logos of JSPM, WebPack, Gulp, Grunt, JSCS 
           p Some developers write tooling off as over-engineering, while others have realized the benefits.
 
         article
-          h1(style="font-size:160px;") There is a fine line between <br>tooling for tooling's sake <br>and getting real work done.
+          h1(style="font-size:130px;") There is a fine line between tooling for tooling's sake and getting real work done.
 
         article
           img(src="images/brain.svg")
@@ -107,7 +111,7 @@ html
           p Any time invested in tooling should be paid back by greater efficiency and better, more resilient code.
 
         article
-          
+
           p "There are too many tools!"
           p "What Should I use?"
           p "It changes too fast!"
@@ -116,16 +120,16 @@ html
           em(style="color:white;") [loudly crying]
 
         article
-          h2(style="font-size:116px;") 😭 → 😢 → 😑 → 😮 → 😁 → 😄
+          h2(style="font-size:60px;") 😭 → 😢 → 😑 → 😮 → 😁 → 😄
           h3 This talk is going to review popular workflow components. <br>I hope you can take away 3 or 4 things <br>to improve your own workflow.
 
         article
           h2 Build Tools
           p The Biggest Barrier to Entry
-          //- TODO: Logos for build systems here 
+          //- TODO: Logos for build systems here
           p Grunt, Gulp, Broccoli, NPM, WebPack
           p Not all tools are Equal
-        
+
         article
           h2 What are they for?
           ul.build
@@ -154,6 +158,7 @@ html
           h2 NPM as a build system
           p Uses NPM Scripts in your package.json to run a string of bash tasks
           p Instead of using Grunt Uglify or Gulp Autoprefixer, it uses the exposed CLI commands directly.
+          p No special gulp/grunt adaptor libs needed - just use the package!
 
         article
           h2
@@ -166,7 +171,8 @@ html
           h2 WebPack
           ul.build
             li More focused on JavaScript Modules - Gulp meets Browserify
-            li Comes Batteries Included for many Common Tasks 
+            li Comes Batteries Included for many Common Tasks
+            li Can handle loading CSS
             li Powerful, but hard to learn API
             li Popular in React community - React Hot Loader
 
@@ -175,20 +181,20 @@ html
           h1.big What Should I use?
 
         article
-          h2 Pick one. Whatever is best for you. 
+          h2 Pick one. Whatever is best for you.
           p I think <strong>Gulp</strong> is the best fit because:
             <br> Build Speed
             <br> Package Availablility
             <br> Ease of Authoring and Understanding
-            <br> Overall Industry Acceptanace<br><a href="http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results">47% use Gulp while near 20% don't use one at all</a> 
+            <br> Overall Industry Acceptanace<br><a href="http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results">47% use Gulp while near 20% don't use one at all</a>
 
         article
           h2 Having a build tool is most important.
           p Once you have something in place, we have thousands of packages available to us — let's look at some!
 
         article.performance
-          h1(style="font-size:250px;") Performance!
-        
+          h1(style="font-size:170px;") Performance!
+
         article.critical
           h1.big
             | Critical
@@ -201,9 +207,9 @@ html
           h1.big
             | Purify
             a(href="https://github.com/purifycss/purifycss", target=_blank) ●
-          p Removes Unused CSS. 
-          p Works with JavaScript Genereated classes & Selectors 
-        
+          p Removes Unused CSS.
+          p Works with JavaScript Genereated classes & Selectors
+
         article
           img.high(src="images/purify.png")
 
@@ -213,10 +219,10 @@ html
             a(href="https://github.com/imagemin/imagemin", target=_blank) ●
 
         article
-          h2(style="font-size:150px;") Image Compression is Hard. 
+          h2(style="font-size:150px;") Image Compression is Hard.
           br
-          p Most devs don't care enough to do it. 
-          p ImageMin provides a common, easy to use interface for 17 different image compression libraries. 
+          p Most devs don't care enough to do it.
+          p ImageMin provides a common, easy to use interface for 17 different image compression libraries.
 
         article
           img.high(src="images/image-compress.png")
@@ -227,7 +233,7 @@ html
         article
           h2 60.5%!
           img(src="images/images-gulp.png")
-        
+
         article.uglifyjs
           h1.big
             | UglifyJS
@@ -238,21 +244,24 @@ html
           h2 2.3m → 405k with just the defaults
           img(src="images/uglify.png")
 
+        article.plain(style="background:url(http://i.giphy.com/TQa2t7Mweq9lS.gif) center; background-size:cover;")
+
+
         article
           img.wide(src="images/ugggggggly.png")
 
         //- MODULES
-        
+
         article
           h1(style="font-size:200px;") Dependency + Module Management
 
         article
-          h1(style="font-size:180px;") We're seeing a huge shift<br>in how we manage<br>front end dependencies
+          h1(style="font-size:130px;") We're seeing a huge shift<br>in how we manage<br>front end dependencies
 
         article
           h2 The Old Way:
           ul
-            li Find monolith library we want 
+            li Find monolith library we want
             li Download from Github
             li Unzip
             li Move over files to project
@@ -262,7 +271,7 @@ html
         article
           h2 One day you wake up and...
           img.wide(src="images/wow-scripts.png")
-        
+
         article
           h2
             | Or you have 5 versions of jQuery
@@ -277,7 +286,7 @@ html
           p With the rise in popularity of build tools, now is the time to start!
 
         article
-          h1.huge How? 
+          h1.huge How?
 
         article
           h2 1. Install your libraries:
@@ -305,14 +314,14 @@ html
           p <span class="hl">Browserify</span> → Simpliest API
           p <span class="hl">WebPack</span> → Handles CSS, built in Watching
           p <span class="hl">JSPM</span> → Client Side. Closest to JavaScript Spec.
-          small You can spend hours comparing these three. Pick Browserify for a quickest setup. 
+          small You can spend hours comparing these three. Pick Browserify for a quickest setup.
 
         article
           h1.large STOP! <br>What about Gulp? Grunt?<br> Where do they fit in?
 
         article
           h2 Gulp and Grunt are task runners, one of your tasks will be to bundle your JavaScript.
-          p Gulp and Grunt can call WebPack, Browserify and JSPM for you, or you can call them directly. 
+          p Gulp and Grunt can call run Browserify, WebPack and JSPM for you, or you can call them directly via NPM Scripts.
 
         article
           h1.large Back to Modules<br> Let's look at some code
@@ -321,7 +330,7 @@ html
           img.high(src="images/modules.png")
 
         article
-          h1 Small Modules that<br>do one thing <br>and<br> one thing well. 
+          h1 Small Modules that<br>do one thing <br>and<br> one thing well.
 
         article
           h2 Only need Ajax?
@@ -337,15 +346,15 @@ html
 
 
         article
-          h1(style="font-size:200px;") NPM,<br> Bower,<br> or JSPM? 
+          h1(style="font-size:200px;") NPM,<br> Bower,<br> or JSPM?
 
         article
           h2 Registries
           p When it comes to installing dependencies, there are two registries: NPM and Bower. JSPM uses NPM's registry.
-          p The main difference is that NPM supports nested dependencies while bower has a flat tree. 
-        
+          p The main difference is that NPM supports nested dependencies while bower has a flat tree.
+
         article
-          h1(style="font-size:250px;") Use NPM for everything!
+          h1(style="font-size:170px;") Use NPM for everything!
           br
           p Even though NPM was initially for Node, it's been expanded to be the Package Manager for everything JavaScript + Front End.
 
@@ -358,7 +367,7 @@ html
 
         article
           h1.huge The Future
-          p JavaScript + CSS are evolving a rapid pace. Let's start writing future code today. 
+          p JavaScript + CSS are evolving a rapid pace. Let's start writing future code today.
 
         article
           h1.big Future JavaScript
@@ -378,7 +387,7 @@ html
         article
           h2 Template Strings
           img.wide(src="images/es6.png")
-        
+
         article
           h2 + Many More
           p These are things we want to use today - and we can!
@@ -419,15 +428,21 @@ html
         article
           h2 Write in CSS4,<br>compile for current browser support
           p Start using the new features today
-        
+
         article
-          img(src="images/jslogo.jpg")
-          h2(style="font-size:150px;") It's Written in JavaScript and compile times are lightning fast
+          img(src="images/jslogo.jpg" width="200")
+          h2(style="font-size:120px;") It's Written in JavaScript and compile times are lightning fast
 
         article
           img(src="images/postcss-logo.png" style="border-radius:50%; border:10px solid white;")
           h2 It's part of PostCSS ecosystem
           p Write your own CSS transformers or grab one of the dozens from NPM (like Autoprefixer!)
+
+        article
+          img.high(src="images/german-stylesheets.png")
+
+        article
+          img(src="images/canadian-stylesheets.png")
 
         article
           img(src="images/cssnext-gulp.png")
@@ -452,24 +467,24 @@ html
         article
           h2 Sourcemaps
           p It's not uncommon for our code to go though several transforms before it hits the browser as regular CSS
-          p <code>Stylus</code> → <code>AutoPrefixer</code> → <code>CSS</code> 
+          p <code>Stylus</code> → <code>AutoPrefixer</code> → <code>CSS</code>
           p <code>ES6</code> → <code>Babel</code> → <code>Browserify</code> → <code>UglifyJS</code> → <code>JavaScript</code>
 
         article
           h2 What happens when there is an error?
           p How do we trace it back to the original file?
-        
+
         article
           p CSS bug in <code>_typography.scss:10</code> but browser shows error in compiled and minified <code>app.css</code>
           p JavaScript error in your React JSX component <code>Store.js:25</code>, but is untraceable after running through Babel and Browserify!
 
         article
-          h1(style="font-size:240px;") Sourcemaps are<br>Treasuremaps<br>for bugs
+          h1(style="font-size:160px;") Sourcemaps are<br>Treasuremaps<br>for bugs
 
-        article 
+        article
           img.high(src="images/sourcemaps.png")
 
-        article 
+        article
           img.high(src="images/css-sourcemaps.png")
 
         article
@@ -477,11 +492,11 @@ html
 
         //- Sum it all up!
         article
-          h1 Whew. That was a lot.
-        
+          h1 😮😮😮<br>Whew.<br>That was a lot.
+
         article
           h1.big Tooling is important
-        
+
         article
           h1.big Put a<br>build process<br>in place
 
@@ -489,9 +504,6 @@ html
           h1.big Sky is the limit!
 
         article
-          h1.big Questions?
+          h1.big Thanks!
           a(href="http://twitter.com/wesbos") @wesbos
           a(href="http://wesbos.com") WesBos.com
-        
-
-

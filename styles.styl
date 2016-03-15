@@ -38,10 +38,10 @@ html {
     &:before, &:after
       display none
 
-.slides > article:nth-child(5n+1):after    
+.slides > article:nth-child(5n+1):after
     background-image linear-gradient(-208deg, #81af9b 0%, #7aa8ac 27%, #6693da 100%)
 
-.slides > article:nth-child(5n+2):after    
+.slides > article:nth-child(5n+2):after
     background-image: linear-gradient(-132deg, #FFDD00 0%, #6DD7BA 100%);
 
 
@@ -65,19 +65,19 @@ randomGradient()
   n = random(1,13)
   combo = combos[n]
   return combo
-  
+
 for num in 1...40
   path = "images/"+ random(1,10)+".jpg"
   combo = randomGradient();
   .slides > article:nth-child(39n+{num})
     &:before
-      background-image url(path) 
+      background-image url(path)
       content combo[1]
-    &:after    
+    &:after
       background-image linear-gradient(random(0,360)deg, combo[1] 0%, combo[0] 100%);
-  
 
-// .slides > article:nth-child(1n):after    
+
+// .slides > article:nth-child(1n):after
 //     background-image: linear-gradient(-173deg, #007EFF 0%, #6DD7BA 51%);
 
 h1,h2,h3,h4,h5,h6
@@ -87,14 +87,14 @@ h1,h2,h3,h4,h5,h6
   line-height 1
   text-shadow 5px 5px 0 rgba(0,0,0,0.3)
   margin 15px 0
- 
+
 p, a, li
   text-shadow 4px 3px 0 rgba(0,0,0,0.3)
   margin 15px 0
 
 p, li, small
   color white
-  font-size 50px  
+  font-size 50px
   font-weight 700
 
 small
@@ -150,7 +150,7 @@ img.high
   width auto
   height 100%
   max-height 1200px
-  
+
 .hl
   color yellow
 
@@ -158,10 +158,10 @@ article.treats
   h1
     margin-bottom 90px
     font-size 250px
-    color orange
-    
-    
-.flex 
+    // color orange
+
+
+.flex
   display flex !important
   & > *
     flex 1
@@ -172,3 +172,26 @@ article.treats
 .emoji
   font-size 116px
   font-family serif
+
+
+// Smaller Screens
+body.square
+  .slides
+    & > article
+      w = 1024
+      h = 768
+      width w px
+      height h px
+      margin-left (w/2) * -1px
+      margin-top (h/2) * -1px
+      border-radius 0
+      h2
+        font-size 110px
+      p, li, small
+        font-size 30px
+      .big
+        font-size 180px
+      .large
+        font-size 140px
+      .huge
+        font-size 220px
