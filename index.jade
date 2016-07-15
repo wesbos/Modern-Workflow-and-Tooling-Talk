@@ -6,7 +6,7 @@ html
       script(src='slides.js')
       link(href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,700' rel='stylesheet' type='text/css')
       link(href='styles.css'  rel='stylesheet' type='text/css')
-    body.square
+    body
       section.slides.layout-regular.template-default
         article.first
           h1(style="font-size:150px;") Modern<br>Workflow<br>&amp; Tooling
@@ -157,36 +157,55 @@ html
         article
           h2 NPM as a build system
           p Uses NPM Scripts in your package.json to run a string of bash tasks
+          p Installed node_modules expose commands to package.json like `babel`, `browser-sync` or `uglify`
           p Instead of using Grunt Uglify or Gulp Autoprefixer, it uses the exposed CLI commands directly.
-          p No special gulp/grunt adaptor libs needed - just use the package!
+          p No special gulp/grunt adapter libs needed - just use the package!
+
+        article
+          h2 NPM Scripts
+          ul.build
+            li No globally installed modules or clashing version from other projects
+            li No complex build files
+            li Useful for small build tasks
+            li Kicking off servers
+            li Cleaning Directories
+            li Starting a webpack build
 
         article
           h2
             | "So Simple + Easy"
             span.emoji 😳
           img(src="images/npm-mess.png", alt="Taken from http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/")
+          p Flow control can get tough!
 
         article
           img(src="images/webpack.png", width="200")
           h2 WebPack
           ul.build
-            li More focused on JavaScript Modules - Gulp meets Browserify
-            li Comes Batteries Included for many Common Tasks
-            li Can handle loading CSS
+            li Focused on JavaScript Modules - Gulp meets Browserify
+            li Comes Batteries Included for many Common Tasks — concatination, module bundling, uglify, sourcemaps...
+            li Can handle loading CSS on a per-module basis
             li Powerful, but hard to learn API
-            li Popular in React community - React Hot Loader
-
+            li Popular in JavaScript community - Hot Loading, Dead Code elimination
 
         article
           h1.big What Should I use?
 
         article
-          h2 Pick one. Whatever is best for you.
-          p I think <strong>Gulp</strong> is the best fit because:
+          h2 Whatever Works Best!
+
+        article
+          h2 For Websites
+          p <strong>Gulp</strong> is the good fit because:
             <br> Build Speed
-            <br> Package Availablility
+            <br> Package Availability
             <br> Ease of Authoring and Understanding
-            <br> Overall Industry Acceptanace<br><a href="http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results">47% use Gulp while near 20% don't use one at all</a>
+            <br> Overall Industry Acceptance<br><a href="http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results">47% use Gulp while near 20% don't use one at all</a>
+
+        article
+          h2 For Large JS Apps
+          p Webpack is in very active development
+          p Huge barrier to entry, but huge possible gains!
 
         article
           h2 Having a build tool is most important.
@@ -243,9 +262,6 @@ html
         article
           h2 2.3m → 405k with just the defaults
           img(src="images/uglify.png")
-
-        article.plain(style="background:url(http://i.giphy.com/TQa2t7Mweq9lS.gif) center; background-size:cover;")
-
 
         article
           img.wide(src="images/ugggggggly.png")
@@ -312,9 +328,8 @@ html
         article
           h2 3. Compile into a single or multiple bundles
           p <span class="hl">Browserify</span> → Simpliest API
-          p <span class="hl">WebPack</span> → Handles CSS, built in Watching
-          p <span class="hl">JSPM</span> → Client Side. Closest to JavaScript Spec.
-          small You can spend hours comparing these three. Pick Browserify for a quickest setup.
+          p <span class="hl">WebPack</span> → Handles CSS, batteries included, Native ES6 Modules
+          p <span class="hl">JSPM</span> → Client Side. Native ES6 Modules
 
         article
           h1.large STOP! <br>What about Gulp? Grunt?<br> Where do they fit in?
@@ -351,19 +366,18 @@ html
         article
           h2 Registries
           p When it comes to installing dependencies, there are two registries: NPM and Bower. JSPM uses NPM's registry.
-          p The main difference is that NPM supports nested dependencies while bower has a flat tree.
 
         article
           h1(style="font-size:170px;") Use NPM for everything!
           br
           p Even though NPM was initially for Node, it's been expanded to be the Package Manager for everything JavaScript + Front End.
 
-        article
-          h1
-            span.green Ecosystems:<br>
-            span Coming soon to an <br> npm install near you
-          br
-          p Will categorize into ‘Browserify’, ‘Windows’, ‘Grunt’, ‘Gulp’, ‘Tessel’ + more
+        //- article
+        //-   h1
+        //-     span.green Ecosystems:<br>
+        //-     span Coming soon to an <br> npm install near you
+        //-   br
+        //-   p Will categorize into ‘Browser’, ‘Server’, ‘Gulp’, ‘PhoneGap’ + more
 
         article
           h1.huge The Future
@@ -405,11 +419,10 @@ html
           h4 WebPack → <code>babel-loader</code>
           h4 CLI → <code>babel script.js --out-file script-compiled.js</code>
 
-        article
-          h2 What about new Language Features?
-          p Not everything new is just Syntax <br>We have new methods, loops + more features.
-          p For that we use a polyfill - <code>require('babel/polyfill');</code>
-
+        //- article
+        //-   h2 What about new Language Features?
+        //-   p Not everything new is just Syntax <br>We have new methods, loops + more features.
+        //-   p For that we use a polyfill - <code>require('babel/polyfill');</code>
 
         //- Future CSS
         article
@@ -442,7 +455,7 @@ html
           img.high(src="images/german-stylesheets.png")
 
         article
-          img(src="images/canadian-stylesheets.png")
+          img.high(src="images/canadian-stylesheets.png")
 
         article
           img(src="images/cssnext-gulp.png")
